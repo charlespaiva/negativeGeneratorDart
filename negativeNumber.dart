@@ -1,13 +1,28 @@
+import 'dart:io';
 import 'dart:math';
 
-int negativeGenerator(int x, int y) {
-  y = y*-1;
-  int positiveMaximum = Random().nextInt(x);//positive
-  int negativeMinimum = Random().nextInt(y);//negative
+negativeConfirm(){
+  print('It is not a negative number!');
+  sleep(Duration(seconds: 3));
+  exit(0);
+}
+
+positiveConfirm(){
+  print('It is not a positive number!');
+  sleep(Duration(seconds: 3));
+  exit(0);
+}
+
+int negativeGenerator(int positiveMaximum, int negativeMinimum) {
   
-  negativeMinimum = negativeMinimum*-1;
+  int randomPositiveMaximum = Random().nextInt(positiveMaximum < 0 ? positiveConfirm() : ++positiveMaximum);//positive
+  int randomNegativeMinimum = Random().nextInt(negativeMinimum >= 0 ? negativeConfirm(): negativeMinimum*-1);//negative
   
-  int randomNumber = positiveMaximum + negativeMinimum;
+  positiveMaximum--;
+
+  randomNegativeMinimum = randomNegativeMinimum*-1;
+  
+  int randomNumber = randomPositiveMaximum + randomNegativeMinimum;
   return randomNumber;
 
 }
