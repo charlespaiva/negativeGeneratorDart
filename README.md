@@ -1,5 +1,4 @@
 # negativeGeneratorDart
-It's a simple algoritm to generate a number (negative or positive) in Dart
 
-A algoritm that have a function to receive two parameters. 
-In the parameter X, you will define the max value (positive) and parameter Y you can define the minimum negative number.
+That algorithm can generate a random number (include negatives). 
+The main function receives two numbers and generate a number between them.
